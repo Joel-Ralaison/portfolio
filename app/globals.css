@@ -2,12 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: lemon;
+  src: url("/assets/lemonMilkMedium.otf");
+}
+
 html {
   @apply !scroll-smooth;
 }
 
 @layer base {
   :root {
+    --lemon: lemon;
     --background: 0, 0%, 95%;
     --foreground: 0, 2%, 9%;
 
@@ -72,6 +78,13 @@ html {
 
     --custom-dark: url("/assets/images/bgDark.svg");
   }
+}
+
+h1,
+h2,
+h3,
+h4 {
+  @apply font-lemon;
 }
 
 @layer base {

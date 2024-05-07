@@ -11,7 +11,7 @@ export default function Skills() {
       <section className="flex gap-10 max-md:flex-col">
         <article className="flex-1 space-y-5 text-2xl">
           <div className="space-y-3">
-            <h5 className="font-lemonMilk">Main</h5>
+            <h5 className="font-lemon text-primary/80">Main</h5>
 
             <div className="text-neutral-700 dark:text-neutral-400">
               <p>
@@ -36,7 +36,7 @@ export default function Skills() {
 
         <article className="flex-1 space-y-5 text-2xl md:mt-[150px]">
           <div className="space-y-3">
-            <h5 className="font-lemonMilk">Tools</h5>
+            <h5 className="font-lemon text-primary/80">Tools</h5>
 
             <p className="text-neutral-700 dark:text-neutral-400">
               These are some third-party libraries I often use when I&apos;m

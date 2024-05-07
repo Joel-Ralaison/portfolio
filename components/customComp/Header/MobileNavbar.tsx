@@ -13,7 +13,7 @@ export default function MobileNavbar() {
   const active = useNavigation((store) => store.active);
   const setActive = useNavigation((store) => store.setActive);
 
-  const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
+  const [windowWidth, setWindowWidth] = useState<number | null>();
 
   function closeMenu() {
     setOpenMenu(false);
@@ -31,7 +31,11 @@ export default function MobileNavbar() {
   }
 
   const handleWindowSize = useCallback(() => {
-    setWindowWidth(window.innerWidth);
+    if (!window) return;
+
+    setWindowWidth(window?.innerWidth);
+
+    if (!windowWidth) return;
 
     if (windowWidth > 768) {
       setOpenMenu(false);
@@ -69,7 +73,7 @@ export default function MobileNavbar() {
         <div className="flex h-[50px] items-center justify-between pr-4">
           <h3
             className={cn([
-              "relative bottom-[2px] text-3xl",
+              "relative bottom-[2px] text-xl",
               "bg-gradient-to-tr bg-clip-text text-transparent",
               "from-neutral-600 via-neutral-700 to-neutral-500",
               "dark:from-neutral-500 dark:via-neutral-200 dark:to-neutral-500",
@@ -118,9 +122,9 @@ export default function MobileNavbar() {
         <div className="absolute bottom-2 left-0 flex h-12 w-full items-center justify-center">
           <Link
             download
-            href="/next.svg"
+            href="/assets/joel-ralaison-resume.pdf"
             target="_blank"
-            className="grid h-full w-[90%] place-items-center rounded-sm bg-foreground/80 font-bold text-background"
+            className="grid h-full w-[90%] place-items-center rounded-sm bg-primary font-bold text-background"
           >
             Download my Resume
           </Link>
@@ -139,6 +143,3 @@ export default function MobileNavbar() {
     </div>
   );
 }
-
-// TODO: onClick [Link to navigate] but [also close drawer]
-// TODO: [cv downloading]**

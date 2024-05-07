@@ -15,7 +15,7 @@ export default function PortfolioLines() {
         </h2>
       </article>
 
-      <div className="absolute right-0 top-[calc(50%-3.5px)] z-20 h-[7px] w-[75%] bg-primary" />
+      <div className="absolute right-0 top-[calc(50vh)] z-20 h-[7px] w-[75%] bg-primary" />
     </>
   );
 }

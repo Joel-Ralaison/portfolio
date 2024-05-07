@@ -1,11 +1,8 @@
-import type { Metadata } from "next";
-// import { Inter } from "next/font/google";
 import "./globals.css";
+import type { Metadata } from "next";
 import Header from "@/components/customComp/Header/Header";
-import { ThemeProvider } from "@/components/customComp/Header/ThemeProvider";
 import BodyBackground from "@/components/customComp/BodyBackground";
-
-// const inter = Inter({ subsets: ["latin"] });
+import { ThemeProvider } from "@/components/customComp/Header/ThemeProvider";
 
 export const metadata: Metadata = {
   title: "Joël-Ralaison | Portfolio",

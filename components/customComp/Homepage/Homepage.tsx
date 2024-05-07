@@ -23,7 +23,7 @@ export default function Homepage() {
     <section
       id="home"
       ref={ref}
-      className="relative h-svh min-h-[375px] w-full px-8 pt-[75px] md:px-16"
+      className="relative h-svh min-h-[475px] w-full px-8 pt-[75px] md:px-16"
     >
       <Heading />
       <Descriptions />

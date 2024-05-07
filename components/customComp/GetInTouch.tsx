@@ -1,8 +1,8 @@
 "use client";
 
+import { useState, type FormEvent } from "react";
 import { cn } from "@/lib/utils";
 import { BsCheck2Circle } from "react-icons/bs";
-import { type FormEvent, useState } from "react";
 import CardContainer from "./CardContainer";
 import emailjs from "@emailjs/browser";
 
@@ -52,9 +52,11 @@ export default function GetInTouch() {
         id="form"
         ref={ref}
         onSubmit={sendEmail}
-        className="space-y-6 px-4 py-6 text-lg"
+        className="space-y-6 p-4 text-lg"
       >
-        <h3 id="contact">Get in touch</h3>
+        <h3 id="contact" className="text-2xl">
+          Get in touch
+        </h3>
 
         <div className="flex gap-6 max-md:flex-col">
           <input
@@ -89,9 +91,10 @@ export default function GetInTouch() {
         <div className="flex items-center gap-2">
           <button
             type="submit"
+            name="Send message"
             className={cn(
-              "rounded-md px-4 py-2 text-lg max-[550px]:w-full",
-              "border border-foreground bg-background text-foreground",
+              "rounded-sm px-4 py-2 text-lg max-[550px]:w-full",
+              "bg-primary text-white dark:text-black",
             )}
           >
             Send Message

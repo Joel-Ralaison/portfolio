@@ -14,6 +14,9 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        lemon: "var(--lemon)",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

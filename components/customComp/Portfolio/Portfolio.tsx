@@ -28,6 +28,8 @@ const projectData = [
       "A responsive website of a sushi food delivery company. Based on a JS Mastery project, rebuilt with the best React.Js framework.",
     stack: ["Next.Js", "Tailwindcss", "Zustand"],
     color: twColors.sushiColor,
+    link: "https://github.com/Joel-Ralaison/sushimanApp",
+    visitLink: "https://sushimanjr.vercel.app",
   },
   {
     title: "WORLDWISE.",
@@ -35,6 +37,8 @@ const projectData = [
       "A modern web application that help users to track their favorite places in their world exploration journey throw an interactive map.",
     stack: ["Next.Js", "Leaflet", "Typescript"],
     color: twColors.worldwiseColor,
+    link: "https://github.com/Joel-Ralaison/Worldwise",
+    visitLink: "https://worldwisejr.vercel.app",
   },
 ];
 
@@ -52,7 +56,7 @@ export default function Portfolio() {
     <div
       id="portfolio"
       ref={ref}
-      className="relative mb-10 mt-16 flex h-[calc(100svh-55px)] min-h-[320px] w-full flex-col items-end p-4"
+      className="relative mb-10 mt-16 flex h-svh min-h-[320px] w-full flex-col items-end p-4"
     >
       {projectData.map((proj) => (
         <Project
@@ -61,6 +65,8 @@ export default function Portfolio() {
           description={proj.description}
           stack={proj.stack}
           color={proj.color}
+          link={proj.link}
+          visitLink={proj.visitLink}
         />
       ))}
 

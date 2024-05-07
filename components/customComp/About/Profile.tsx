@@ -34,8 +34,8 @@ export default function Profile() {
           </p>
 
           <p className="max-w-[550px] leading-7 max-md:text-xl xl:leading-10">
-            I focus on all things web related and my goal is to deliver an
-            unique and impactful digital experience for everyone.
+            I focus on all things web related and my goal is to deliver unique
+            and impactful digital experience for everyone.
           </p>
 
           <p className="max-w-[550px] leading-7 max-md:text-xl xl:leading-10">

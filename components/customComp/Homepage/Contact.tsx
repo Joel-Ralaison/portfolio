@@ -21,10 +21,11 @@ export default function Contact() {
             className="text-neutral-600 group-hover:text-black dark:text-neutral-400 dark:group-hover:text-white"
           />
           <span className="max-md:hidden">hery.ralaison@gmail.com</span>
+          <span className="sr-only">hery.ralaison@gmail.com</span>
         </Link>
 
         <Link
-          href="https://www.github.com"
+          href="https://github.com/Joel-Ralaison"
           target="_blank"
           className="group flex items-center space-x-3 hover:text-black dark:hover:text-white max-md:p-2"
         >
@@ -32,11 +33,12 @@ export default function Contact() {
             size={25}
             className="text-neutral-600 group-hover:text-black dark:text-neutral-400 dark:group-hover:text-white"
           />
-          <span className="max-md:hidden">Joël Rlsn</span>
+          <span className="max-md:hidden">Joel-Ralaison</span>
+          <span className="sr-only">Joel-Ralaison</span>
         </Link>
 
         <Link
-          href="https://www.linkedIn.com"
+          href="https://www.linkedin.com/in/hery-ralaison"
           target="_blank"
           className="group flex items-center space-x-3 hover:text-black dark:hover:text-white max-md:p-2"
         >
@@ -44,7 +46,8 @@ export default function Contact() {
             size={25}
             className="text-neutral-600 group-hover:text-black dark:text-neutral-400 dark:group-hover:text-white"
           />
-          <span className="max-md:hidden">Joël Ralaison</span>
+          <span className="max-md:hidden">Joël Heriniaina Ralaison</span>
+          <span className="sr-only">Joël Heriniaina Ralaison</span>
         </Link>
       </div>
     </article>

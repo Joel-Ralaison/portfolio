@@ -12,7 +12,7 @@ export default function Header() {
       <div
         className={cn([
           "relative mx-auto flex h-full max-w-screen-xl justify-end",
-          "bg-background shadow-md shadow-black/10",
+          "bg-background shadow-md shadow-black/10 dark:border-b dark:border-primary/15",
         ])}
       >
         <Logo />

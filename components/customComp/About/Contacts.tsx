@@ -1,3 +1,4 @@
+import Link from "next/link";
 import CardContainer from "../CardContainer";
 
 import {
@@ -12,26 +13,31 @@ const contactsData = [
   {
     label: "E-mail",
     value: "hery.ralaison@gmail.com",
+    link: "https://gmail.com/hery.ralaison@gmail.com",
     icon: <BiLogoGmail />,
   },
   {
     label: "GitHub",
-    value: "Joel-ralaison",
+    value: "Joel-Ralaison",
+    link: "https://github.com/Joel-Ralaison",
     icon: <BiLogoGithub />,
   },
   {
     label: "LinkedIn",
-    value: "Joel ralaison",
+    value: "Joël Heriniaina Ralaison",
+    link: "https://www.linkedin.com/in/hery-ralaison",
     icon: <BiLogoLinkedin />,
   },
   {
     label: "Facebook",
     value: "Joël Rlsn",
+    link: "https://www.facebook.com/joelrlsn",
     icon: <BiLogoFacebook />,
   },
   {
     label: "Mobile",
     value: "+261346058002",
+    link: "",
     icon: <BiSolidPhone />,
   },
 ];
@@ -46,9 +52,16 @@ export default function Contacts() {
           <li key={data.label}>
             <div className="mb-1 flex items-center gap-2">
               <span className="text-2xl">{data.icon}</span>
-              <span>{data.label}</span>
+              <p>{data.label}</p>
             </div>
-            <p>{data.value}</p>
+
+            {data.link ? (
+              <Link href={data.link} target="_blank">
+                {data.value}
+              </Link>
+            ) : (
+              <span>{data.value}</span>
+            )}
           </li>
         ))}
       </ul>
