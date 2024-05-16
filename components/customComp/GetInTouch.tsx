@@ -27,7 +27,7 @@ export default function GetInTouch() {
 
     const serviceId = process.env.NEXT_PUBLIC_SERVICE_ID!;
     const templateId = process.env.NEXT_PUBLIC_TEMPLATE_ID!;
-    const publickey = process.env.NEXT_PUBLIC_PUBLIC_KEY!;
+    const publickey = process.env.NEXT_PUBLIC_PBK!;
 
     try {
       emailjs
@@ -42,8 +42,6 @@ export default function GetInTouch() {
       setSent(false);
       console.log("Failed to send message ");
     }
-
-    form.reset();
   }
 
   return (

@@ -12,7 +12,7 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 
-import { BiLogoGithub } from "react-icons/bi";
+import { BiLoader, BiLogoGithub } from "react-icons/bi";
 
 export default function Project(props: {
   title: string;
@@ -28,9 +28,9 @@ export default function Project(props: {
         <CarouselItem className="group h-[calc(50svh)] min-h-[160px] w-full cursor-default">
           <article className="group relative h-full w-full">
             <div className="flex h-[80%] items-center justify-center pt-[calc(10%)]">
-              <h3 className="relative bottom-8 bg-transparent px-6 pb-3 pt-2 text-7xl transition-colors duration-150 group-hover:bg-foreground group-hover:text-background max-md:text-4xl">
+              <p className="relative bottom-8 bg-transparent px-6 pb-3 pt-2 font-lemon text-7xl transition-colors duration-150 group-hover:bg-foreground group-hover:text-background max-md:text-4xl">
                 {props.title}
-              </h3>
+              </p>
             </div>
 
             <div className="absolute bottom-2 left-0 flex w-full flex-col justify-end pb-4">
@@ -40,13 +40,20 @@ export default function Project(props: {
                   <span className="max-md:hidden">Repository</span>
                 </Link>
 
-                <Link
-                  href={props.visitLink}
-                  className="flex items-center gap-2"
-                >
-                  <BsArrowUpRightCircleFill size={22} />
-                  <span className="max-md:hidden">{props.visitLink}</span>
-                </Link>
+                {props.visitLink ? (
+                  <Link
+                    href={props.visitLink}
+                    className="flex items-center gap-2"
+                  >
+                    <BsArrowUpRightCircleFill size={22} />
+                    <span className="max-md:hidden">{props.visitLink}</span>
+                  </Link>
+                ) : (
+                  <span className="flex items-center gap-2">
+                    <BiLoader size={22} />
+                    <span className="max-md:hidden">On building</span>
+                  </span>
+                )}
               </div>
 
               <div className="absolute right-2 flex items-center gap-2 py-1">
@@ -69,23 +76,23 @@ export default function Project(props: {
             )}
           >
             <div className="space-y-4 max-md:space-y-1">
-              <h3 className={cn("w-fit text-2xl", props.color.TITLE)}>
+              <p className={cn("w-fit font-lemon text-2xl", props.color.TITLE)}>
                 {props.title}
-              </h3>
+              </p>
 
               <p className="max-w-[600px] text-white dark:text-neutral-300 max-md:text-base">
                 {props.description}
               </p>
             </div>
 
-            <h4
+            <p
               className={cn(
-                "absolute bottom-[50px] right-2 text-4xl max-md:hidden",
+                "absolute bottom-[50px] right-2 font-lemon text-4xl max-md:hidden",
                 props.color.BGTEXT,
               )}
             >
               {props.title}
-            </h4>
+            </p>
 
             <ul className="flex flex-wrap gap-x-4 gap-y-0 text-lg text-white/80 dark:text-white/60 md:text-2xl">
               {props.stack.map((tech) => (

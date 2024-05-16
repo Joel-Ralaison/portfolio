@@ -1,18 +1,11 @@
-"use client";
-
 import PortfolioLines from "./PortfolioLine";
 import Project from "./Project";
-
-import { useInView } from "react-intersection-observer";
-import { useNavigation } from "@/stores/useNavigation";
-import { useEffect } from "react";
 
 const twColors = {
   sushiColor: {
     BGTEXT: "text-rose-200 dark:text-rose-900 cursor-default",
     BG: "bg-rose-600 dark:bg-rose-950",
-    TITLE:
-      "bg-gradient-to-r from-yellow-200 to-amber-200 dark:from-rose-500 from-20% dark:to-amber-500 to-70% text-transparent bg-clip-text",
+    TITLE: "text-amber-300 dark:text-yellow-400",
   },
   worldwiseColor: {
     BGTEXT: "text-teal-400 dark:text-teal-900 cursor-default",
@@ -38,25 +31,15 @@ const projectData = [
     stack: ["Next.Js", "Leaflet", "Typescript"],
     color: twColors.worldwiseColor,
     link: "https://github.com/Joel-Ralaison/Worldwise",
-    visitLink: "https://worldwisejr.vercel.app",
+    visitLink: "",
   },
 ];
 
 export default function Portfolio() {
-  const setActive = useNavigation((store) => store.setActive);
-  const { ref, inView } = useInView();
-
-  useEffect(() => {
-    if (inView) {
-      setActive("#portfolio");
-    }
-  }, [inView, setActive]);
-
   return (
-    <div
+    <section
       id="portfolio"
-      ref={ref}
-      className="relative mb-10 mt-16 flex h-svh min-h-[320px] w-full flex-col items-end p-4"
+      className="relative my-5 flex h-svh min-h-[450px] w-full flex-col items-end p-4"
     >
       {projectData.map((proj) => (
         <Project
@@ -71,6 +54,6 @@ export default function Portfolio() {
       ))}
 
       <PortfolioLines />
-    </div>
+    </section>
   );
 }

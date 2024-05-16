@@ -13,7 +13,7 @@ const contactsData = [
   {
     label: "E-mail",
     value: "hery.ralaison@gmail.com",
-    link: "https://gmail.com/hery.ralaison@gmail.com",
+    link: "#form",
     icon: <BiLogoGmail />,
   },
   {
@@ -31,7 +31,7 @@ const contactsData = [
   {
     label: "Facebook",
     value: "Joël Rlsn",
-    link: "https://www.facebook.com/joelrlsn",
+    link: "https://web.facebook.com/hery.ralaison",
     icon: <BiLogoFacebook />,
   },
   {
@@ -56,7 +56,10 @@ export default function Contacts() {
             </div>
 
             {data.link ? (
-              <Link href={data.link} target="_blank">
+              <Link
+                href={data.link}
+                target={data.link.includes("#") ? "_self" : "_blank"}
+              >
                 {data.value}
               </Link>
             ) : (

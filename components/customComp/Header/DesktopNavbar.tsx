@@ -19,20 +19,22 @@ export default function DesktopNavbar() {
     <NavigationMenu className="max-md:hidden">
       <NavigationMenuList>
         {NavigationLinks.map((link) => (
-          <Link key={link.href} href={link.href} legacyBehavior passHref>
-            <NavigationMenuLink
-              className={cn(
-                "h-9 w-max bg-transparent px-4 py-2 text-base font-medium text-accent-foreground/50 outline-none transition-colors hover:text-accent-foreground",
-                {
-                  "border-b-2 border-accent-foreground/75 text-accent-foreground":
-                    active === link.href,
-                },
-              )}
-              onClick={() => setActive(link.href)}
-            >
-              {link.label}
-            </NavigationMenuLink>
-          </Link>
+          <li key={link.href}>
+            <Link href={link.href} legacyBehavior passHref>
+              <NavigationMenuLink
+                className={cn(
+                  "h-9 w-max bg-transparent px-4 py-2 text-base font-medium text-accent-foreground/70 outline-none transition-colors hover:text-accent-foreground",
+                  {
+                    "border-b-2 border-accent-foreground/75 text-accent-foreground":
+                      active === link.href,
+                  },
+                )}
+                onClick={() => setActive(link.href)}
+              >
+                {link.label}
+              </NavigationMenuLink>
+            </Link>
+          </li>
         ))}
       </NavigationMenuList>
     </NavigationMenu>

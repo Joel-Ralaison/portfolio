@@ -3,8 +3,8 @@ import Image from "next/image";
 
 export default function Profile() {
   return (
-    <article className="mx-auto max-w-[1000px] pt-[65px]">
-      <h4 className="mb-4 text-3xl">About me</h4>
+    <article className="mx-auto max-w-[1000px] pt-5">
+      <h2 className="mb-4 text-3xl">About me</h2>
 
       <div className="flex gap-5 max-[650px]:flex-col xl:gap-10">
         <div className="flex w-[310px] justify-center overflow-hidden rounded-lg shadow-md shadow-black/15">

@@ -1,4 +1,18 @@
+"use client";
+
+import { useNavigation } from "@/stores/useNavigation";
+import { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
+
 export default function PortfolioLines() {
+  const setActive = useNavigation((store) => store.setActive);
+  const { ref, inView } = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      setActive("#portfolio");
+    }
+  }, [inView, setActive]);
   return (
     <>
       <article className="absolute left-[15%] top-0 h-full">
@@ -15,7 +29,10 @@ export default function PortfolioLines() {
         </h2>
       </article>
 
-      <div className="absolute right-0 top-[calc(50vh)] z-20 h-[7px] w-[75%] bg-primary" />
+      <div
+        ref={ref}
+        className="absolute right-0 top-[calc(50%)] z-20 h-[7px] w-[75%] bg-primary"
+      />
     </>
   );
 }
