@@ -73,6 +73,7 @@ export default function GetInTouch() {
             placeholder="Your email"
             id="userEmail"
             name="userEmail"
+            required
           />
         </div>
 

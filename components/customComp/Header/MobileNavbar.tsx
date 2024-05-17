@@ -122,7 +122,7 @@ export default function MobileNavbar() {
         <div className="absolute bottom-2 left-0 flex h-12 w-full items-center justify-center">
           <Link
             download
-            href="/assets/joel-ralaison-resume.pdf"
+            href="assets/joel-ralaison-resume.pdf"
             target="_blank"
             className="grid h-full w-[90%] place-items-center rounded-sm bg-primary font-bold text-background"
           >

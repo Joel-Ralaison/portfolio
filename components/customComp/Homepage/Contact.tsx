@@ -4,7 +4,7 @@ import { BiLogoGithub, BiLogoGmail, BiLogoLinkedin } from "react-icons/bi";
 export default function Contact() {
   return (
     <article className="absolute bottom-2 right-0 flex h-[110px] max-h-[350px] w-[40%] max-md:w-svw">
-      <p className="absolute left-0 top-full h-[40px] w-[110px] max-w-[350px] origin-top-left -rotate-90 text-center font-lemon max-md:hidden">
+      <p className="absolute left-0 top-full h-[40px] w-[110px] max-w-[350px] origin-top-left -rotate-90 pt-2 text-center font-lemon text-lg max-md:hidden">
         CONTACTS
       </p>
 
