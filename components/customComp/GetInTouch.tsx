@@ -9,20 +9,23 @@ import emailjs from "@emailjs/browser";
 import { useInView } from "react-intersection-observer";
 import { useNavigation } from "@/stores/useNavigation";
 import { useEffect } from "react";
+import { BiXCircle } from "react-icons/bi";
 
 export default function GetInTouch() {
   const [sent, setSent] = useState<boolean | null>(null);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<boolean>(false);
   const setActive = useNavigation((store) => store.setActive);
   const { ref, inView } = useInView();
 
   useEffect(() => {
-    if (inView) {
-      setActive("#contact");
-    }
+    if (inView) setActive("#contact");
   }, [inView, setActive]);
 
-  function sendEmail(e: FormEvent<HTMLFormElement>) {
+  async function sendEmail(e: FormEvent<HTMLFormElement>) {
+    if (loading) return;
     e.preventDefault();
+
     const form = e.target as HTMLFormElement;
 
     const serviceId = process.env.NEXT_PUBLIC_SERVICE_ID!;
@@ -30,17 +33,25 @@ export default function GetInTouch() {
     const publickey = process.env.NEXT_PUBLIC_PBK!;
 
     try {
+      setLoading(true);
+      setSent(false);
+      setError(false);
+
       emailjs
         .sendForm(serviceId, templateId, form, {
           publicKey: publickey,
         })
         .then(() => {
+          setLoading(false);
           setSent(true);
+          setError(false);
           console.log("Message sent");
         });
     } catch (error) {
-      setSent(false);
       console.log("Failed to send message ");
+      setLoading(false);
+      setSent(false);
+      setError(true);
     }
   }
 
@@ -92,17 +103,27 @@ export default function GetInTouch() {
             type="submit"
             name="Send message"
             className={cn(
-              "rounded-sm px-4 py-2 text-lg max-[550px]:w-full",
-              "bg-primary text-white dark:text-black",
+              "rounded-sm px-6 py-2 text-lg text-white dark:text-black max-[550px]:w-full",
+              {
+                "bg-primary": !loading,
+                "cursor-not-allowed bg-primary/75": loading,
+              },
             )}
           >
-            Send Message
+            {loading ? "Sending" : "Send Message"}
           </button>
 
           {sent && (
             <p className="flex items-center gap-2">
               <BsCheck2Circle />
-              <span>Message sent !</span>
+              <span>Message sent!</span>
+            </p>
+          )}
+
+          {error && (
+            <p className="flex items-center gap-2">
+              <BiXCircle />
+              <span>Failed</span>
             </p>
           )}
         </div>

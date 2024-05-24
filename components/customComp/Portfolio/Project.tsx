@@ -23,9 +23,9 @@ export default function Project(props: {
   visitLink: string;
 }) {
   return (
-    <Carousel className="h-[50%] min-h-[160px] w-[75%]">
+    <Carousel className="h-[50%] min-h-[175px] w-[75%]">
       <CarouselContent>
-        <CarouselItem className="group h-[calc(50svh)] min-h-[160px] w-full cursor-default">
+        <CarouselItem className="group h-[calc(50svh)] min-h-[160px] w-full cursor-grab">
           <article className="group relative h-full w-full">
             <div className="flex h-[80%] items-center justify-center pt-[calc(10%)]">
               <p className="relative bottom-8 bg-transparent px-6 pb-3 pt-2 font-lemon text-7xl transition-colors duration-150 group-hover:bg-foreground group-hover:text-background max-md:text-4xl">
@@ -67,7 +67,7 @@ export default function Project(props: {
           </article>
         </CarouselItem>
 
-        <CarouselItem className="h-[calc(50svh-15px)] min-h-[160px] w-full cursor-default">
+        <CarouselItem className="h-[calc(50svh-15px)] min-h-[160px] w-full cursor-grab">
           <article
             className={cn(
               "relative h-full w-full p-4 max-md:py-2",
