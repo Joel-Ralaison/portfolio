@@ -58,12 +58,13 @@ export default function Contacts() {
             {data.link ? (
               <Link
                 href={data.link}
+                className="md:text-lg lg:text-xl"
                 target={data.link.includes("#") ? "_self" : "_blank"}
               >
                 {data.value}
               </Link>
             ) : (
-              <span>{data.value}</span>
+              <span className="md:text-lg lg:text-xl">{data.value}</span>
             )}
           </li>
         ))}

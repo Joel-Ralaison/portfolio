@@ -18,4 +18,4 @@ To run this project, just install dependencies and run the build
 - Facebook: [Joël Rlsn](https://web.facebook.com/hery.ralaison)
 - LinkedIn: [Joël Heriniaina Ralaison](https://www.linkedin.com/in/hery-ralaison)
 
-[<mark>. Visit my portfolio website .</mark>](https:/joelralaison.vercel.app)
+[<mark>. Visit my portfolio website .</mark>](https://joelralaison.vercel.app)
