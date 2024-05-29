@@ -17,7 +17,7 @@ export default function Heading() {
           "dark:via-default dark:from-zinc-500 dark:to-zinc-700": true,
         })}
       >
-        I&apos;m a frontend developper that integrates the latest web
+        I&apos;m a frontend developer that integrates the latest web
         technologies to build modern, interactive and responsive websites, based
         on <span className="text-strong">your specifications</span>.
       </p>
